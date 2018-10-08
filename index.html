@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>Urban Olympics — Data Challenge </title>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,900|Montserrat:100,200,300,400,700|Raleway:200,300,400" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="menu.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('.js-scrollTo').on('click', function() { // Au clic sur un élément
+			var page = $(this).attr('href'); // Page cible
+			var speed = 750; // Durée de l'animation (en ms)
+			$('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+			return false;
+		});
+	});
+
+$(window).on("scroll", function() {
+    if($(window).scrollTop() > 500) {
+        $(".menu").addClass("active");
+    } else {
+        //remove the background property so it comes transparent again (defined in your css)
+       $(".menu").removeClass("active");
+    }
+});
+
+$('button').click(function() {
+  $(this).toggleClass('expanded').siblings('div').slideToggle();
+});
+
+</script>
+</head>
+<body>
+
+<nav class="menu">
+		<li><a class="js-scrollTo" href="#splash">Accueil</a></li>
+		<li><a class="js-scrollTo" href="#contexte">Contexte</a></li>
+		<li><a class="js-scrollTo" href="#cadrage">Cadrage</a></li>
+		<li><a class="js-scrollTo" href="#jeux">Jeux de données</a></li>
+		<li><a class="js-scrollTo" href="#calendrier">Calendrier</a></li>
+		<li><a class="js-scrollTo" href="#partenaires">Partenaires</a></li>
+</nav>
+
+<header class="header">
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menus">
+		<li><a class="js-scrollTo" href="#splash">Accueil</a></li>
+		<li><a class="js-scrollTo" href="#contexte">Contexte</a></li>
+		<li><a class="js-scrollTo" href="#cadrage">Cadrage</a></li>
+		<li><a class="js-scrollTo" href="#jeux">Jeux de données</a></li>
+		<li><a class="js-scrollTo" href="#calendrier">Calendrier</a></li>
+		<li><a class="js-scrollTo" href="#partenaires">Partenaires</a></li>
+  </ul>
+</header>
+
+<div id="splash">
+	<div id="UO-inner"></div>
+	<div id="dc-inner"></div>
+	<div class="arrow1"></div>
+</div>
+
+<div id="contexte">
+	<h2><span class="c1">contexte historique<span></h2>
+	<div class="content-txt">
+		<p class="colonnes">Depuis 1869, année de la toute première intégration scolaire d’une discipline sportive (la gymnastique, en l’espèce) comme matière d’éducation physique (soutenu par le ministre de l’époque, Victor Duruy), <mark>la place du sport dans nos vies et sociétés contemporaines aura considérablement évolué</mark>. D’abord cantonnée dans les établissements d’instruction publique de garçons, l’éducation physique et sportive intégra progressivement (sous l’impulsion de Jules Ferry) les programmes d’enseignement du primaire et secondaire à destination des garçons et des filles. Outre son utilité ‘directe’ relative à la préservation d’une bonne santé ainsi qu’à la réduction des risques de maladies notamment cardio-vasculaires, le sport et plus directement les exercices gymniques furent d’abord considérés comme <mark>un vecteur d’<i>assouplissement</i> non seulement musculaire mais aussi ‘moral’ et comportemental</mark>, pourrait-on dire — la pédagogie du sport reposant primitivement sur l’inculcation de certaines valeurs de la troisième République, à savoir l’ordre, la discipline, la rigueur, le patriotisme, également la force d’endurance (physique et mentale), le courage, la maîtrise.</p>
+
+		<p class="colonnes">Sans doute faudra-t-il attendre les années 1970, avec l’introduction des pédagogies actives, pour que le sport soit, d’une part, regardé comme <mark>un véritable vecteur de développement (tant social que cognitif et psychomoteur), d’épanouissement, et d’émancipation personnels</mark> et, d’autre part, qu’au seul critère jusqu’alors dominant de la <i>performance</i> s’ajoute (parfois se substitue) celui de la <i>réussite</i> (aussi bien personnelle que collective) conférant un supplément de vertus au cadre de la compétition. Aujourd’hui, <mark>le sport fait partie intégrante de nos vies quotidiennes</mark>. Il concourt au renforcement de l’estime de soi, rehausse le sens et le goût de l’effort. Il est, par ailleurs, <mark>un formidable vecteur du dialogue interculturel, de l’intégration sociale, en particulier celle des minorités ethniques et communautés issues de l’immigration</mark> — sorte de catalyseur du lien ‘humain’ encourageant à la diversité (sociale, culturelle), à la mixité, faisant de toutes les différences, une force, un atout, une chance. À l’échelle des grands évènements sportifs (soit les jeux olympiques ou encore les nombreux championnats du monde, toutes disciplines confondues), les attendus et objectifs ont aussi très largement changé au cours du temps. Le sociologue Max Horkheimer nous aura enseigné combien ils contribuent à la survie d’une concurrence loyale et pacifique entre les nations. Ils sont, en quelques sortes, à la ‘base’ de la formation d’un langage prétendant à l’universalité en ceci qu’il pourrait permettre d’établir des ponts entre les sociétés, les cultures et les religions.</p>
+	</div>
+</div>
+
+<div id="cadrage">
+	<h2><span class="c1">cadrage du challenge</span></h2>
+	<div class="content-txt">
+		<p class="colonnes">Si la pratique du sport s’est aujourd’hui largement popularisée, on notera que le rapport performance-réussite aura toutefois occasionné un certain clivage (bipolarisation) entre les communautés de sportifs : d’un côté, se trouvent les professionnels, les semi-professionnels et ceux désireux de le devenir, d’un autre côté, se retrouvent les amateurs, pour certains assidus, réguliers pour d’autres plus occasionnels — s’y mêlent alors les passionnés, les curieux jusqu’aux velléitaires. Aussi, ces deux populations ne se mélangent guère ou que très rarement. La première (professionnelle) aura plus que tendance à négliger, à déconsidérer la seconde. Pourtant, toutes deux ont en commun un franc amour du sport ; ils reconnaissent, chacun à leur manière, tout le plaisir, le bien-être qu’ils trouvent en activité ainsi que le loisir, les émotions qu’ils retirent lorsque précisément le sport s’offre pour eux en spectacle. Tout professionnel, aussi talentueux et médaillé soit-il, aura été à ses débuts un amateur. Pour ce qu’il en est des sportifs amateurs, qu’ils entrevoient ou non de se professionnaliser, chacun aura un jour aspiré à filer les pas, à suivre les sillons de champions ‘modèles’, puisant en eux de l’allant, de l’élan. Aussi, les questions ici posées qu’il reviendra d’adresser dans le cadre du présent projet sont les suivantes : <mark>Comment œuvrer pour une démocratisation encore plus grande de la pratique sportive (tous publics) ?</br>
+		Comment soutenir, accompagner, aider durablement les amateurs dans leurs activités sportives quotidiennes (en particulier les plus paresseux ou apathiques) ?</br>
+		Comment faciliter, aider, encourager, inciter à la pratique en club ?</br>
+		Comment réunir ou à tout le moins rapprocher professionnels et amateurs, d’une façon non "artificielle" ?</br>
+		De quelle façon encourager, aider, accompagner les sportifs souhaitant emprunter la voie (semi-)professionnelle ?</mark></p>      
+	</div>
+</div>
+
+<div id="splash2">
+	<div id="words">
+		<h1>off<span class="regular">-olympics 2024.</span></br><span class="light">La ville comme terrain des jeux</span></h1>
+	</div>
+</div>
+
+<div id="positionnement">
+	<h2><span class="c3">positionnement</span></h2>
+	<div class="content-txt2">
+		<p class="colonnes">Dans la perspective des Jeux Olympiques de Paris 2024 dont le succès reposera, pour une bonne part, sur l’intensité collective ainsi que sur la qualité des partages entre les publics et diverses communautés acteurs , il vous est proposé de participer à la conception d’un projet de design, intitulé « Urban Olympics », reposant sur l’emploi/le recours aux données publiques (data-driven design) pour la promotion et l’organisation/gestion/orchestration (…) du sport amateur en ville (au sein d’infrastructures adaptées, pérennes ou temporaires, également en ‘terrain urbain’) en marge ou parallèle (le Off-Olympics) de la tenue des Jeux Olympique à Paris (également dans la visée, dans la trajectoire d’ici à 2024) engageant d’autres relations d’échange/de partage entre acteurs (clubs ‘pros’ et amateurs, fédérations, associations, communautés ad-hoc, etc.). Deux axes de travail vous sont proposés :</p></br> 
+
+		<img src="img/mobile2.svg">
+		<p class="bold" style="text-decoration: underline;">1 — Service applicatif : réseautage social, ‘gamification’ et évènementiel JO</p>
+		<p class="colonnes"><span class="bold">Définition et conception d’une (ou plusieurs) offre(s) servicielle(s) applicative(s) (application[s] logicielle[s] disponible[s] sur terminaux mobiles et résidents) joignant la mise en place d’un réseau social, la création d’un nouveau cadre de jeu  et la conception d’un support éditorial/informationnel pour le suivi des JO 2024 (résultats et autres informations connexes). Celle-ci proposera différentes entrées fonctionnelles telles que : l’organisation d’entrainements, de tournois, de rencontres et compétitions amicales ‘off’, de challenges mixtes (professionnels, amateurs) ou dédiés ‘amateurs’ ; la synchronisation ou mutualisation d’activités sportives distantes (courses à pieds, de natation à différents endroits géographiques etc.) ; le coaching, l’accompagnement « ProToAm », etc.</span></p>
+
+		<img src="img/vis2.svg">
+		<p class="bold" style="text-decoration: underline; ">2 — Représentation-visualisation de données</span></p>
+		<p class="colonnes"><span class="bold">Définition et conception de représentation-visualisation de données (statiques, animées et/ou interactives) soit à part de l’offre applicative (ex : cartographie papier des « Sport Spots » à Paris ou sur le territoire français, etc.) ou bien s’y intégrant sous la forme de modules/widgets fonctionnels orientés ‘Pros’ et/ou ‘Ams’ (ex : suivi temps-réel des activités sportives dans la ville ; comparaison des performances des athlètes en compétition, panorama journalier des sports préférés des amateurs [en pratique comme dans les tribunes ou à l’écran] ; supervision des activités ou épreuves sportives ‘Pros’ et ‘Ams’ en cours par type, par âge, par niveau, par période, etc.).</span></p>
+	</div>
+</div>
+
+<div id="jeux">
+	<h2><span class="c3">jeux de données</span></h2>
+	<div class="content-txt3">
+		<p class="intertitres3">Enquête sur les pratiques physiques et sportives en France</p>
+		<p class="colonnes lighter">L'enquête 2010  sur  la  pratique  physique  et sportive  en  France,  commanditée  par  le CNDS et le ministère en charge des sports, a été réalisée par la MEOS et l’INSEP qui en ont assuré la maîtrise d’œuvre.Elle  vise  à  décrire  la  pratique  physique  et sportive au sens large, qu’elle soit autonome ou  encadrée,  intensive  ou  occasionnelle, à  faire  apparaître  la  plus  grande  diversité de  pratiques physiques  et  sportives  et  à caractériser  le  profil  socio-démographique des  pratiquants  et  des  non-pratiquants.
+
+		<li><a href="http://www.sports.gouv.fr/IMG/archives/pdf/Stat_Info_no11-02_de_novembre_2011.pdf" target="_blank">Les principales activités physiques et sportives pratiquées en France en 2010</a>.</br><span class="light"> Stat-Info, Méos, 2011</span></li>
+		
+		<li><a href="http://www.sports.gouv.fr/IMG/pdf/la_pratique_des_activites_physiques_et_sportives_en_france.pdf">La pratique des activités physiques et sportives en France, Résultats de l'enquête 2010</a>.</br><span class="light"> MVJS, INSEP, Méos, 2011</span></li></p>
+
+		<hr>
+		
+		<p class="intertitres3">Recensement des licences et clubs auprès des fédérations sportives agréées par le ministère chargé des sports</p>
+		<p class="colonnes lighter">Enquête exhaustive auprès de l’ensemble des fédérations françaises agréées délivrant des titres de participation, le recensement permet de mesurer le niveau et l’évolution dans le temps de la pratique sportive licenciée. Ces statistiques fournissent un éclairage pour les politiques publiques de développement du sport, tant au niveau national que territorial. 
+
+		Le recensement concernent l’ensemble des fédérations sportives agréées par le ministère chargé des sports. Les dernières données mises à disposition concernent l’année 2014 et couvrent la France Métropolitaine, la Guadeloupe, la Martinique, la Réunion, la Guyane, Mayotte, Saint-Pierre et Miquelon, Saint-Barthélemy, Saint-Martin, Wallis-et-Futuna, la Polynésie française et la Nouvelle-Calédonie.
+
+		Le recensement concerne à la fois les licences proprement dites, mais aussi les autres types de participation (ATP). Une licence est définie comme un titre payant, permettant une pratique annuel, même si le possesseur de la licence ne pratique que deux mois dans l’année. Les ATP sont l’ensemble des titres qui ne sont pas des licences, comme par exemple, des titres à la journée. 
+		
+		<li>Données sur 'data.gouv.fr' disponibles <a href="https://www.data.gouv.fr/fr/datasets/donnees-geocodees-issues-du-recensement-des-licences-et-clubs-aupres-des-federations-sportives-agreees-par-le-ministere-charge-des-sports/" target="_blank">ici</a></li>
+		
+		<li>Données sur 'sports.gouv.fr' disponibles <a href="http://www.sports.gouv.fr/organisation/publication-chiffres-cles/Statistiques/STAT-INFO/article/Pratique-sportive">ici</a></li>
+
+		<li>Cartographie sur 'CartoStats' disponible <a href="http://cartostats.mjs.local/#v=map1;l=fr;i=fr_lic2013_ens.l_2013;f=101" target="_blank">ici</a></li>
+		
+		<li>Atlas des fédérations sportives (édition 2015) disponibles <a href="http://www.sports.gouv.fr/organisation/publication-chiffres-cles/Toutes-les-publications-10217/article/L-Atlas-national-des-federations-sportives-2015">ici</a></p>
+
+		<hr>
+
+		<p class="intertitres3">Liste des sportifs de haut niveau</p>
+		<p class="colonnes lighter">Pour favoriser les bons résultats des athlètes français dans les compétitions sportives internationales, le ministère chargé des sports développe une politique de suivi social afin que les sportifs de haut niveau puissent réaliser les performances à la hauteur de leur potentiel, tout en leur garantissant la poursuite d’une formation et d’une insertion professionnelle correspondant à leurs capacités et leurs aspirations. Le sport de haut niveau repose sur des critères bien établis qui sont : 
+		<span style="text-decoration: underline;">la reconnaissance du caractère de haut niveau des disciplines sportives ; les compétitions de référence ; la liste des sportifs de haut niveau ; les parcours de l’excellence sportive</span>. Le ministre chargé des sports arrête, au vu des propositions des fédérations et après avis de la Commission nationale du sport de haut niveau, la liste des sportifs de haut niveau. Cette liste contient 6 catégories de sportifs: Senior, Elite, Espoir, Jeune, Partenaire d’entraînement et Reconversion.
+
+		<li>Liste des athlètes inscrits sur la liste des sportifs de haut niveau en 2015 sur 'data.gouv.fr' disponible <a href="https://www.data.gouv.fr/fr/datasets/athletes-inscrits-sur-la-liste-des-sportifs-de-haut-niveau-en-2015/" target="_blank">ici</a></li>
+		
+		<li>Formulaire de recherche des sportifs de hauts niveau sur 'data.gouv.fr' disponible <a href="http://sports.gouv.fr/pratiques-sportives/sport-performance/Sport-de-haut-niveau/article/Liste-des-sportifs-de-haut-niveau" target="_blank">ici</a></li>
+
+		<li>Formulaire de recherche des Espoirs et partenaires d'entrainement sur 'data.gouv.fr' disponible <a href="http://sports.gouv.fr/pratiques-sportives/sport-performance/Sport-de-haut-niveau/article/Liste-des-sportifs-Espoirs-et-des-partenaires-d-entrainement" target="_blank">ici</a></li></p>
+
+		<hr>
+
+		<p class="intertitres3">La dépense sportive des ménages</p>
+		<p class="colonnes lighter">La dépense sportive des ménages correspond principalement aux  licences  et  autres  cotisations  versées par  les  adhérents  aux  clubs  de  sport  et autres  associations  sportives,  ainsi  qu’aux droits  d’accès  payés  par  les  utilisateurs  des installations  sportives  privées  ou  publiques (piscines,  stades,  terrains  de  golf,...)  et  les spectateurs  des  manifestations  sportives. Elle  inclut  aussi  les  autres  achats  de  biens de  consommation  et  de  services  payants dont  l’usage  est  habituellement  requis  pour pouvoir  exercer  des  activités  sportives  ou en  améliorer leurs  pratiques.</p>
+
+		<li>Le poid économique du secteur sportif en France, , données disponibles <a href="http://www.sports.gouv.fr/IMG/pdf/sporteco_poids_eco_bd2-2.pdf" target="_blank">ici</a></li></p>
+
+		<li>Les chiffres clés du marché du sport en France disponibles <a href="https://www.economie.gouv.fr/entreprises/chiffres-cles-marche-sport-en-france" target="_blank">ici</a></li></p>
+
+		<li>Le poids économique du sport en France (édition 2017 par l'injep), données disponibles <a href="http://www.injep.fr/article/le-poids-economique-du-sport-edition-2017-11631.html" target="_blank">ici</a></li></p>
+
+		<hr>		
+
+		<p class="intertitres3">Le Répertoire National des Associations (RNA)</p>
+		<p class="colonnes lighter">Le RNA est un fichier national développé par le ministère de l’Intérieur recensant l’ensemble des informations sur les associations. Chaque association est identifiée par un "numéro RNA" débutant par W et composé de 9 chiffres. 
+		Conformément à la Loi du 1er juillet 1901, toute création d’association fait l’objet d’une déclaration auprès du représentant de l’Etat dans le département. Elle est soumise à la publication des éléments suivants au Journal Officiel : nom et objet de l’association, statuts, adresse du siège social, des établissements éventuels, noms, professions, domiciles et nationalités des administrateurs.
+
+		Le numéro RNA est attribué automatiquement à l'association lors de sa déclaration de création. Elle doit en outre demander son immatriculation au répertoire Sirene lorsqu'elle souhaite demander des subventions auprès de l’État ou des collectivités territoriales, lorsqu'elle emploie des salariés ou lorsqu'elle exerce des activités qui conduisent au paiement de la TVA ou de l'impôt sur les sociétés.
+
+		La diffusion au Journal Officiel des Associations et Fondations d'Entreprise (JOAFE) est assurée par la DILA (Direction de l’information légale et administrative). La DILA publie par ailleurs un listing des déclarations extrait du JOAFE (fichier "Associations") sur le site data.gouv pour les années 2004 à 2014.
+
+		Le domaine d'activité des associations est identifiée sous une variable "Thème" codé en 5 chiffres. Les associations intervenant dans le domaine du sport couvrent les grands thèmes "11000 - Sports, activités de plein air" (43 postes) et "13000-chasse  et pêche" (2 postes) : 11030-Badminton, 11070-Handball, 11165-Tennis ....13005-chasse, 13010-pêche.
+
+		<li>Présentation du RNA sur 'associations.gouv' disponible <a href="http://www.associations.gouv.fr/le-rna-repertoire-national-des-associations.html" target="_blank">ici</a></li>
+
+		<li>Jeu de données du RNA sur 'data.gouv.fr' disponible <a href="http://www.data.gouv.fr/fr/datasets/repertoire-national-des-associations-rna/" target="_blank">ici</a></li>
+
+		<li>Subventions allouées en 2015 par le Centre National pour le Développement du Sport (CNDS), données disponibles <a href="https://www.data.gouv.fr/fr/datasets/subventions-allouees-en-2015-par-le-centre-national-pour-le-developpement-du-sport-cnds/" target="_blank">ici</a></li> 
+
+		<li>Projet de loi de finances pour 2017 (PLF 2017) - Jaune 'Effort financier de l’État en faveur des associations' disponible <a href="https://www.data.gouv.fr/fr/datasets/projet-de-loi-de-finances-pour-2017-plf-2017-jaune-effort-financier-de-letat-en-faveur-des-associations/" target="_blank">ici</a></li> 
+
+		<li>Formulaire de recherche des parutions au JOAFE disponible <a href="http://www.journal-officiel.gouv.fr/association/index.php" target="_blank">ici</a></li>
+
+		<li>Fichiers "Associations" sur 'data.gouv.fr' disponibles <a href="https://www.data.gouv.fr/fr/datasets/fichier-associations-publie-par-la-dila-reformate/" target="_blank">ici</a></li>
+
+		<li>DataAsso, site internet visant à présenter toutes les associations françaises relevant de la Loi 1901 disponible <a href="http://www.dataasso.fr/" target="_blank">ici</a></li>
+
+		<li><a href="http://www.sports.gouv.fr/IMG/archives/pdf/STAT-Info_n_06-05_avril_2006_-_Le_budget_des_associations_sportives.pdf" target="_blank">Le budget des associations sportives</a>.</br><span class="light"> Stat-Info, Méos, 2006</span></li>
+
+		<li>Les essentiels de la vie associative, édition 2016, fiches départementales disponibles <a href="http://www.associations.gouv.fr/les-essentiels-de-la-vie-associative-edition-2016.html" target="_blank">ici</a></li></p>
+
+		<hr>		
+
+		<p class="intertitres3">Observatoire de l’économie du sport</p>
+		<p class="colonnes lighter">L’Observatoire de l’Économie du Sport a pour mission de fournir aux acteurs de l’Économie du Sport, une information régulière et fiable sur l’état et l’évolution des marchés du sport et leur rôle dans l’économie et la société. Il mobilise des données d'organismes partenaires et propose une série d'indicateurs clés valorisés sous la forme de fiches thématiques France entière : Macro-économie, Sportainment, Marché à l'export, évènements sportif ...
+		
+		<li>Observatoire de l’économie du sport sur 'data.gouv.fr' disponible <a href="http://www.sports.gouv.fr/accueil-du-site/Zoom-sur/article/Observatoire-de-l-economie-du-sport-17440" target="_blank">ici</a></li></p>
+
+		<hr>
+
+		<p class="intertitres3">Recensement des équipements sportifs, espaces et sites de pratiques</p>
+		<p class="colonnes lighter">Le ministère chargé des sports met en œuvre, depuis 2004, une démarche nationale de recensement des équipements sportifs, qui s'inscrit dans un cadre partenarial avec le mouvement sportif et les collectivités territoriales. La direction des sports en assure le pilotage national, tandis que les DRJSCS coordonnent sa mise en œuvre en lien avec les DDCS et DDCSPP selon des modalités définies entre elles. 
+
+		Le recensement des équipements sportifs, espaces et sites de pratiques (RES) concerne, avec l'objectif affiché d'exhaustivité, tous les équipements, en service, publics ou privés, ouverts au public à titre gratuit ou payant. Le critère essentiel est que toute personne puisse y accéder (à titre individuel ou via une structure publique ou privée [associative ou commerciale]), à titre gratuit ou payant, avec pour objectif principal d'y pratiquer une activité physique et/ou sportive. Le recensement fixe dans ce cadre 30 grandes familles d'équipements sportifs déclinées en 160 types.
+
+		<li>Au 1er janvier 2017, le RES compte plus de 330 000 lieux de pratiques sportives recensés en France métropolitaine et dans les départements et collectivités d'outre-mer. Leurs qualités et leurs caractéristiques sont consultables sur un site Internet dédié, libre d'accès et gratuit disponible <a href="http://www.res.sports.gouv.fr" target="_blank">ici</a></li>
+
+		<li>Données sur 'data.gouv.fr' disponibles <a href="https://www.data.gouv.fr/fr/datasets/recensement-des-equipements-sportifs-espaces-et-sites-de-pratiques/" target="_blank">ici</a></li>
+
+		<li>Bibliographie du RES sur 'data.gouv.fr' disponible <a href="http://www.sports.gouv.fr/pratiques-sportives/Les-equipements-sportifs/Le-recensement-des-equipements-sportifs/article/Bibliographie-15715" target="_blank">ici</a></li></p>
+
+		<hr>		
+
+		<p class="intertitres3">Fichier des éducateurs sportifs de la base EAPS</p>
+		<p class="colonnes lighter">Tout éducateur désirant enseigner, animer, encadrer ou entraîner, contre rémunération, à titre d’occupation principale ou secondaire, de façon habituelle, saisonnière ou occasionnelle, doit se déclarer auprès de la direction départementale de la cohésion sociale (ou direction départementale de la cohésion sociale et de la protection des populations) de son lieu d’exercice. La direction départementale de la cohésion sociale concernée délivre à l’éducateur sportif, une fois toutes les vérifications effectuées, une carte professionnelle. Les éducateurs sportifs stagiaires en formation ne se voient pas délivrer de cartes professionnelles tant qu'ils ne sont pas titulaires d'au moins une qualification.
+
+		Les données relatives aux éducateurs sportifs demandeurs sont stockées en temps réel dans la base EAPS. Elles sont accessibles à tous, sans restriction d’accès.
+
+		Les éducateurs territoriaux des activités physiques et sportives et les professeurs d'éducation physique et sportive (EPS) titulaires exclusivement des concours respectifs de la fonction publique n'ont pas d'obligation de détenir une carte professionnelle en cours dans le cadre de leur mission de fonctionnaire. Ils n'apparaissent donc pas dans la base de données, sauf s'ils ont une activité professionnelle d'éducateur sportif en plus de leur mission de fonctionnaire.
+
+		<li>Portail public des éducateurs sportifs disponible <a href="http://eapspublic.sports.gouv.fr/CarteProRecherche/Recherche" target="_blank">ici</a></li>
+
+		<li><a href="http://www.sports.gouv.fr/autres/atlas2015_educateurs.pdf" target="_blank">Atlas 2015 des éducateurs sportifs déclarés</a>.</br><span class="light"> Ministère en charge des sports, PRNSN, 2015</span></li>
+
+		<li><a href="http://doc.sportsdenature.gouv.fr/doc_num.php?explnum_id=365" target="_blank">Enquête nationale sur l’emploi des éducateurs déclarés en sports de nature</a>.</br><span class="light"> Ministère en charge des sports, , PRNSN, 2011</span></li></p>
+
+		<hr>		
+
+		<p class="intertitres3">Base des Conseillers Techniques Sportifs (CTS)</p>
+		<p class="colonnes lighter">Tout éducateur désirant enseigner, animer, encadrer ou entraîner, contre rémunération, à titre d’occupation principale ou secondaire, de façon habituelle, saisonnière ou occasionnelle, doit se déclarer auprès de la direction départementale de la cohésion sociale (ou direction départementale de la cohésion sociale et de la protection des populations) de son lieu d’exercice. La direction départementale de la cohésion sociale concernée délivre à l’éducateur sportif, une fois toutes les vérifications effectuées, une carte professionnelle. Les éducateurs sportifs stagiaires en formation ne se voient pas délivrer de cartes professionnelles tant qu'ils ne sont pas titulaires d'au moins une qualification.
+
+		Les données relatives aux éducateurs sportifs demandeurs sont stockées en temps réel dans la base EAPS. Elles sont accessibles à tous, sans restriction d’accès.
+
+		Les éducateurs territoriaux des activités physiques et sportives et les professeurs d'éducation physique et sportive (EPS) titulaires exclusivement des concours respectifs de la fonction publique n'ont pas d'obligation de détenir une carte professionnelle en cours dans le cadre de leur mission de fonctionnaire. Ils n'apparaissent donc pas dans la base de données, sauf s'ils ont une activité professionnelle d'éducateur sportif en plus de leur mission de fonctionnaire.
+
+		<li>Missions des CTS sur 'sports.gouv.fr', données disponibles <a href="http://www.sports.gouv.fr/organisation/missions-organisation/cadres-techniques/" target="_blank">ici</a></li>
+
+		<li>Jeu de données 2016 de la base CTS sur 'data.gouv.fr' disponible <a href="https://www.data.gouv.fr/fr/datasets/base-des-conseillers-techniques-sportifs/" target="_blank">ici</a></li></p>
+
+		<hr>		
+
+		<p class="intertitres3">Fichier des diplômés des métiers du sport de la base Forôme</p>
+		<p class="colonnes lighter">Le code du sport indique que « seuls peuvent, contre rémunération, enseigner, animer ou encadrer une activité physique ou sportive ou entraîner ses pratiquants, à titre d'occupation principale ou secondaire, de façon habituelle, saisonnière ou occasionnelle sous réserve des dispositions du quatrième alinéa du présent article et de l'article L. 212-2 du présent code, les titulaires d'un diplôme, titre à finalité professionnelle ou certificat de qualification — garantissant la compétence de son titulaire en matière de sécurité des pratiquants et des tiers dans l'activité considérée et enregistré au répertoire national des certifications professionnelles (RNCP) dans les conditions prévues au II de l'article L. 335-6 du code de l'éducation. ». 
+
+		Le ministère de la ville, de la jeunesse et des sports administre une base de données dressant la liste des diplômes délivrés.
+
+
+		<li>Modalités d’obtention des diplômes sur 'sports.gouv.fr' disponibles <a href="http://www.sports.gouv.fr/emplois-metiers/decouvrir-nos-offres-de-formations/" target="_blank">ici</a></li>
+
+		<li>Guides les métiers et les diplômes professionnels relevant du sport et de l'animation sur 'data.gouv.fr' disponibles <a href="http://www.sports.gouv.fr/emplois-metiers/decouvrir-nos-offres-de-formations/Guide-pratique-Les-metiers-et-les-diplomes-professionnels-relevant-du-sport/" target="_blank">ici</a></li>
+
+		<li>Jeu de données 2015 des diplômés des métiers du sport sur 'data.gouv.fr' disponible <a href="https://www.data.gouv.fr/fr/datasets/base-des-diplomes-des-metiers-du-sport-2015/" target="_blank">ici</a></li>
+
+		<li>Les statistiques relatives aux diplômes réalisées par le bureau DS.C2 disponibles <a href="https://paco.intranet.social.gouv.fr/sport/DS/formation_certification/outilsdemiseenoeuvre/Pages/Les-statistiques.aspx" target="_blank">ici</a></li></p>
+		
+		<hr>
+
+		<p class="intertitres3">Athlètes inscrits sur la liste des sportifs de haut niveau en 2015</p>
+		<p class="colonnes lighter">Maintenir le rang de la France parmi les grandes nations sportives est un axe important de la politique sportive de l’Etat qui passe par l’obtention de bons résultats lors des rencontres sportives internationales. Pour favoriser les bons résultats des athlètes français dans les compétitions sportives internationales, le ministère chargé des sports développe une politique de suivi social afin que les sportifs de haut niveau puissent réaliser les performances à la hauteur de leur potentiel, tout en leur garantissant la poursuite d’une formation et d’une insertion professionnelle correspondant à leurs capacités et leurs aspirations.
+
+		Le sport de haut niveau repose sur des critères bien établis qui sont : la reconnaissance du caractère de haut niveau des disciplines sportives ; les compétitions de référence ; la liste des sportifs de haut niveau ; les parcours de l’excellence sportive.
+
+		Le ministre chargé des sports arrête, au vu des propositions des fédérations et après avis de la Commission nationale du sport de haut niveau, la liste des sportifs de haut niveau. Cette liste contient 6 catégories de sportifs: Senior ; Elite ; Espoir ; Jeune ; Partenaire d’entraînement ; Reconversion.
+
+		<li>Données sur 'data.gouv.fr' disponibles <a href="https://www.data.gouv.fr/fr/datasets/athletes-inscrits-sur-la-liste-des-sportifs-de-haut-niveau-en-2015/" target="_blank">ici</a></li></p>
+	
+		<hr>
+
+		<p class="intertitres3">Paris 2024</p>
+		<p><li>Site internet officiel :<a href="https://www.paris2024.org/fr" target="_blank">https://www.paris2024.org/fr</a></li></p>
+		<li>Sites pour les jeux olympiques et paralympiques 2024, données sur 'data.gouv.fr' disponibles <a href="https://www.data.gouv.fr/fr/datasets/sites-pour-les-jeux-olympiques-et-paralympiques-2024/" target="_blank">ici</a></li></p>
+
+		<hr>
+
+		<p class="intertitres3">Divers</p>
+
+		<li>Rapport "Coût du sport: est-il un frein à la pratique. Entre représentation, offre sportive et demande des pratiquants" disponible <a href="http://ile-de-france.drjscs.gouv.fr/sites/ile-de-france.drjscs.gouv.fr/IMG/pdf/rapport_cout_du_sport_FINAL_FEVRIER_2015.pdf" target="_blank">ici</a></li>
+		<li>Publication de données par la région IDF sur la thématique "Sport" disponibles <a href="https://www.data.gouv.fr/fr/datasets/?q=sport&organization=534fffa8a3a7292c64a780c8" target="_blank">ici</a></li>
+		<li>'Olympic Data Feed (ODF)' disponible <a href="http://odf.olympictech.org/project.htm" target="_blank">ici</a></li>
+		<li>'All the Olympic Stats You'll Ever Need' disponible <a href="http://olympstats.com" target="_blank">ici</a></li>
+		<li>Tous les résultats des JO disponibles <a href="https://www.olympic.org/olympic-results" target="_blank">ici</a></li>
+		<li>'Olympics app' disponible <a href="https://itunes.apple.com/us/app/olympics/id808794344?mt=8" target="_blank">ici</a></li>
+		<li>'Pyeongchang 2018 app' disponible <a href="https://www.olympic.org/fr/news/lancement-de-l-application-officielle-de-pyeongchang-2018" target="_blank">ici</a></li>
+		<li>'Pyeongchang apps' disponible <a href="http://www.iphon.fr/post/quelles-apps-iphone-suivre-jeux-olympiques-hiver-2018" target="_blank">ici</a></li>	
+		<li>'Rio 2016 app' disponible <a href="https://rio-2016-olympic-games.en.uptodown.com/android" target="_blank">ici</a></li>
+		<li>'London 2012 app' disponible <a href="https://www.androidcentral.com/best-android-apps-following-london-2012-olympics" target="_blank">ici</a></li>
+		<li>'Visualizing the Olympics' disponible <a href="https://carto.com/blog/olympics-post-2018/" target="_blank">ici</a></li>
+	</div>
+</div>
+
+<div id="calendrier">
+	<h2><span class="c1">calendrier</span></h2>
+	<div class="content-txt">
+		<div class="colonnes1" id="dates">
+		<p><span style="font-weight: 700;">Lancement</span> : 18 et 20 septembre 2018</p>
+		<p><span style="font-weight: 700;">2 séances de travail hebdomadaire</span> les mardi et jeudi</p>
+		<p>— des points d'étapes sont à fixer —</p>
+		<p><span style="font-weight: 700;">Rendu #1: restitution intermédiaire</span> : courant décembre 2018 — date à fixer —</p>
+		<p><span style="font-weight: 700;">1 séance de travail hebdomadaire</span> les mardi</p>
+		<p><span style="font-weight: 700;">Rendu #2: restitution finale</span> : courant juin 2019 — date à fixer —</p>
+		</div>
+	</div>
+</div>
+
+<div id="partenaires">
+	<h2><span class="c1">Acteurs</span></h2>
+	<div class="content-txt">
+		<p class="colonnes">Le Data Challenge, organisé par l'<a href="http://www.pantheonsorbonne.fr" target="_blank">Université Paris 1 Panthéon-Sorbonne</a> (en particulier l'école des arts de la Sorbonne — responsable de l'opération : David Bihanic), est mené en partenariat avec le <a href="http://www.sports.gouv.fr" target="_blank">ministère des sports, de la jeunesse, de l'éducation populaire et de la vie associative</a> ainsi que l'équipe de la mission <a href="https://www.etalab.gouv.fr" target="_blank">Etalab</a> laquelle est rattachée à la <a href="http://www.modernisation.gouv.fr/documentation/publications/direction-interministerielle-des-systemes-dinformation-et-de-communication-de-letat-deux-ans-dactions" target="_blank">direction interministérielle du numérique et du système d'information et de communication de l'État</a> (DINSIC). Chargée de la politique d'ouverture et de partage des données publiques du gouvernement français, Etalab développe et maintient le portail <a href="http://www.data.gouv.fr" target="_blank">data.gouv.fr</a>. Parmi les personnes directement impliquées, il revient de mentionner:</p> 
+
+		<div id="gp">
+
+		<div class="pboites" id="b1">
+			<div class="portraits" id="p1"></div>
+			<div class="profils" id="f1"><span style="font-weight: 700;">Raphael Janelli</span>, Géographe-géomaticien, ministère des Sports (Direction des Sports)</div>
+		</div>
+		
+		<div class="pboites" id="b2">
+			<div class="portraits" id="p2"></div>
+			<div class="profils" id="f2"><span style="font-weight: 700;">Romain Tales</span>, Responsable du recensement des données publiques, Etalab-DINSIC</div>
+		</div>
+
+		<div class="pboites" id="b3">		
+			<div class="portraits" id="p3"></div>
+			<div class="profils" id="f3"><span style="font-weight: 700;">Benjamin Perrot</span>, Chargé de mission Open Data (data.gouv.fr), Etalab-DINSIC</div>
+		</div>
+
+		<div class="pboites" id="b4">			
+			<div class="portraits" id="p4"></div>
+			<div class="profils" id="f4"><span style="font-weight: 700;">David Bihanic</span>, Maître de conférences, Université Paris 1 Panthéon-Sorbonne</div>
+		</div>
+	</div>
+</div>
+
+<div id="footer">
+		<div id="logos"></div>
+		<div id="year">Partenariat de projet 2018-2019".</div>
+</div>
+
+</body>
+</html>
